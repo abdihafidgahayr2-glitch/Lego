@@ -113,4 +113,4 @@ This repository does **not** include the `.env` file, the JWT private key, or up
 
 ## 👤 Author
 
-**Abdihafid Gahayr** — [LinkedIn](https://www.linkedin.com/in/abdihafid-gahayr-166134405/)
+**Abdihafid Gahayr** — [LinkedIn](https://www.linkedin.com/in/abdihafid-gahayr/)
