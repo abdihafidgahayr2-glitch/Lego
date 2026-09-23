@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.ag_navbar {
+  background: #1a237e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ag_navLink {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.ag_navLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ag_logoutBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.ag_logoutBtn:hover {
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.ag_hero {
+  background: url("/lego1.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.ag_hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+.ag_hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ag_heroLink {
+  display: inline-block;
+  background: #1a237e;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+.ag_heroLink:hover {
+  transform: scale(1.05);
+}
+
+.ag_categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #fff;
+}
+
+.ag_categoryCard {
+  background: #f5f5f5;
+  padding: 1.5rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: box-shadow 0.3s;
+}
+.ag_categoryCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ag_featured {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ag_featured h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ag_productCard {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.ag_productCard:hover {
+  transform: translateY(-5px);
+}
+.ag_productCard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.ag_productCard h3 {
+  margin: 0.8rem 0 0.4rem;
+}
+
+.ag_price {
+  font-weight: bold;
+  color: #e53935;
+}
+
+.ag_description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.ag_addToCart {
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.ag_addToCart:hover {
+  background: #283593;
+}
+.ag_addToCart {
+  padding: 0.5rem 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.ag_productsPage {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ag_filters {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  order: 2;
+  flex: 1 1 240px;
+  max-width: 280px;
+  padding: 1.5rem;
+}
+.ag_filters input,
+.ag_filters select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.ag_productGrid {
+  order: 1;
+  flex: 3 1 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.ag_formContainer {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+.ag_formContainer h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.ag_formContainer label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 500;
+}
+.ag_formContainer input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.ag_formContainer button {
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.ag_formContainer button:hover {
+  background: #283593;
+}
+.ag_formContainer button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.ag_formError {
+  color: #c62828;
+  background: rgba(229, 57, 53, 0.08);
+  border: 1px solid #e53935;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.ag_fieldError {
+  display: block;
+  color: #c62828;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.ag_profilePhoto {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.ag_guestCheckout {
+  margin-top: 1.5rem;
+}
+.ag_guestCheckout label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 500;
+}
+.ag_guestCheckout input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.ag_cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+.ag_cartItem span {
+  flex: 1;
+}
+.ag_cartItem button {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.ag_cartItem button:hover {
+  background: #c62828;
+}
+.ag_cartItem button {
+  padding: 0.2rem 0.8rem;
+  margin: 0 0.3rem;
+}
+
+.ag_cartTotal {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.ag_checkoutBtn {
+  background: #43a047;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.ag_checkoutBtn:hover {
+  background: #2e7d32;
+}
+.ag_checkoutBtn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  float: right;
+}
+
+.ag_adminForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.ag_adminForm input,
+.ag_adminForm button {
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.ag_adminForm button {
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.ag_adminForm button:hover {
+  background: #283593;
+}
+.ag_adminForm button {
+  grid-column: span 2;
+}
+
+.ag_adminProductList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.ag_adminProductCard {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+.ag_adminProductCard span {
+  flex: 1 1 100%;
+  font-weight: 500;
+}
+.ag_adminProductCard input {
+  flex: 0 1 110px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.ag_adminProductCard button {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.ag_adminProductCard button:hover {
+  background: #ad2121;
+}
+.ag_adminProductCard button {
+  padding: 0.3rem 0.8rem;
+  white-space: nowrap;
+}
+
+.ag_orderItem {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+}
+.ag_orderItem button {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.ag_orderItem button:hover {
+  background: #fb8c00;
+}
+.ag_orderItem button {
+  padding: 0.3rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .ag_navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ag_navbar div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .ag_hero h1 {
+    font-size: 2rem;
+  }
+  .ag_productsPage {
+    flex-direction: column;
+  }
+  .ag_filters {
+    order: 1;
+    max-width: 100%;
+  }
+  .ag_productGrid {
+    order: 2;
+  }
+  .ag_adminForm {
+    grid-template-columns: 1fr;
+  }
+  .ag_adminForm button {
+    grid-column: 1;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

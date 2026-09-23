@@ -1,0 +1,447 @@
+$colorNavy: #1a237e;
+$colorNavyDark: #283593;
+$colorRed: #e53935;
+$colorRedDark: #c62828;
+$colorGreen: #43a047;
+$colorGreenDark: #2e7d32;
+$colorOrange: #ff9800;
+$colorOrangeDark: #fb8c00;
+$colorDanger: #d32f2f;
+$colorDangerDark: #ad2121;
+$colorTextDark: #333;
+$colorBgLight: #f5f5f5;
+$colorWhite: #fff;
+$colorBorder: #ddd;
+$colorBorderLight: #eee;
+
+$radiusSmall: 4px;
+$radiusMedium: 6px;
+$radiusLarge: 8px;
+$radiusPill: 20px;
+$radiusPillLarge: 30px;
+
+$shadowSoft: 0 2px 6px rgba(0, 0, 0, 0.06);
+$shadowMedium: 0 2px 12px rgba(0, 0, 0, 0.1);
+$shadowHover: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+@mixin cardSurface($radius: $radiusMedium, $shadow: $shadowSoft) {
+    background: $colorWhite;
+    border-radius: $radius;
+    box-shadow: $shadow;
+}
+
+@mixin solidButton($bg, $bgHover, $radius: $radiusSmall) {
+    background: $bg;
+    color: $colorWhite;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+
+    &:hover {
+        background: $bgHover;
+    }
+}
+
+@mixin inputBase {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid $colorBorder;
+    border-radius: $radiusSmall;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: $colorBgLight;
+    color: $colorTextDark;
+}
+
+.ag_navbar {
+    background: $colorNavy;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.ag_navLink {
+    color: $colorWhite;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: $radiusSmall;
+    transition: background 0.3s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.ag_logoutBtn {
+    background: none;
+    border: none;
+    color: $colorWhite;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+        background: rgba(255, 0, 0, 0.3);
+        border-radius: $radiusSmall;
+    }
+}
+
+.ag_hero {
+    background: url('/lego1.jpg') center/cover no-repeat;
+    color: $colorWhite;
+    text-align: center;
+    padding: 4rem 2rem;
+
+    h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.ag_heroLink {
+    display: inline-block;
+    background: $colorNavy;
+    color: $colorWhite;
+    padding: 0.8rem 2rem;
+    border-radius: $radiusPillLarge;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.ag_categories {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: $colorWhite;
+}
+
+.ag_categoryCard {
+    background: $colorBgLight;
+    padding: 1.5rem 2.5rem;
+    border-radius: $radiusLarge;
+    text-decoration: none;
+    color: $colorTextDark;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: $shadowHover;
+    }
+}
+
+.ag_featured {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.ag_productCard {
+    @include cardSurface($radiusLarge);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: $radiusSmall;
+    }
+
+    h3 {
+        margin: 0.8rem 0 0.4rem;
+    }
+}
+
+.ag_price {
+    font-weight: bold;
+    color: $colorRed;
+}
+
+.ag_description {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.3rem 0 0.6rem;
+}
+
+.ag_addToCart {
+    @include solidButton($colorNavy, $colorNavyDark, $radiusPill);
+    padding: 0.5rem 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.ag_productsPage {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ag_filters {
+    @include cardSurface($radiusLarge);
+    order: 2;
+    flex: 1 1 240px;
+    max-width: 280px;
+    padding: 1.5rem;
+
+    input,
+    select {
+        @include inputBase;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+.ag_productGrid {
+    order: 1;
+    flex: 3 1 700px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.ag_formContainer {
+    @include cardSurface($radiusLarge, $shadowMedium);
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin: 0.8rem 0 0.3rem;
+        font-weight: 500;
+    }
+
+    input {
+        @include inputBase;
+    }
+
+    button {
+        @include solidButton($colorNavy, $colorNavyDark);
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+.ag_formError {
+    color: $colorRedDark;
+    background: rgba(229, 57, 53, 0.08);
+    border: 1px solid $colorRed;
+    border-radius: $radiusSmall;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.ag_fieldError {
+    display: block;
+    color: $colorRedDark;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.ag_profilePhoto {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.ag_guestCheckout {
+    margin-top: 1.5rem;
+
+    label {
+        display: block;
+        margin: 0.8rem 0 0.3rem;
+        font-weight: 500;
+    }
+
+    input {
+        @include inputBase;
+    }
+}
+
+.ag_cartItem {
+    @include flexBetween;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid $colorBorderLight;
+
+    span {
+        flex: 1;
+    }
+
+    button {
+        @include solidButton($colorRed, $colorRedDark);
+        padding: 0.2rem 0.8rem;
+        margin: 0 0.3rem;
+    }
+}
+
+.ag_cartTotal {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+.ag_checkoutBtn {
+    @include solidButton($colorGreen, $colorGreenDark, $radiusPillLarge);
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    float: right;
+}
+
+.ag_adminForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    input,
+    button {
+        padding: 0.7rem;
+        border-radius: $radiusSmall;
+        border: 1px solid $colorBorder;
+    }
+
+    button {
+        @include solidButton($colorNavy, $colorNavyDark);
+        grid-column: span 2;
+    }
+}
+
+.ag_adminProductList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.ag_adminProductCard {
+    @include cardSurface;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 1rem;
+
+    span {
+        flex: 1 1 100%;
+        font-weight: 500;
+    }
+
+    input {
+        flex: 0 1 110px;
+        padding: 0.4rem 0.6rem;
+        border: 1px solid $colorBorder;
+        border-radius: $radiusSmall;
+    }
+
+    button {
+        @include solidButton($colorDanger, $colorDangerDark);
+        padding: 0.3rem 0.8rem;
+        white-space: nowrap;
+    }
+}
+
+.ag_orderItem {
+    @include cardSurface;
+    @include flexBetween;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+
+    button {
+        @include solidButton($colorOrange, $colorOrangeDark, $radiusPill);
+        padding: 0.3rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ag_navbar {
+        flex-direction: column;
+        align-items: stretch;
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+    }
+
+    .ag_hero h1 {
+        font-size: 2rem;
+    }
+
+    .ag_productsPage {
+        flex-direction: column;
+    }
+
+    .ag_filters {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .ag_productGrid {
+        order: 2;
+    }
+
+    .ag_adminForm {
+        grid-template-columns: 1fr;
+
+        button {
+            grid-column: 1;
+        }
+    }
+}
